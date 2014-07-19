@@ -11,6 +11,14 @@
 		8F0AC2A71973B34E00CEFFF6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AC2A61973B34E00CEFFF6 /* AppDelegate.m */; };
 		8F0AC2A91973B34E00CEFFF6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F0AC2A81973B34E00CEFFF6 /* Images.xcassets */; };
 		8F0AC2B51973B34F00CEFFF6 /* KeyboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AC2B41973B34F00CEFFF6 /* KeyboardTests.m */; };
+		8F0AC2C81973B3A200CEFFF6 /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AC2C71973B3A200CEFFF6 /* KeyboardViewController.m */; };
+		8F0AC2CB1973B3A200CEFFF6 /* com.avazapp.Keyboard.Avaz-Keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8F0AC2C21973B3A200CEFFF6 /* com.avazapp.Keyboard.Avaz-Keyboard.appex */; };
+		8F0AC2D41973BDD300CEFFF6 /* Keys.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AC2D31973BDD300CEFFF6 /* Keys.m */; };
+		8F0AC2D61973BE2200CEFFF6 /* Keys.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F0AC2D51973BE2200CEFFF6 /* Keys.xib */; };
+		8F52C1FB19792EA100BB95A0 /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F52C1FA19792EA100BB95A0 /* DataController.m */; };
+		8F52C201197A834800BB95A0 /* PredictController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F52C200197A834800BB95A0 /* PredictController.m */; };
+		8F9A9AC119755B2300A5DCC8 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9A9ABF19755B2300A5DCC8 /* SettingsViewController.m */; };
+		8F9A9AC219755B2300A5DCC8 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F9A9AC019755B2300A5DCC8 /* SettingsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -21,7 +29,35 @@
 			remoteGlobalIDString = 8F0AC29D1973B34E00CEFFF6;
 			remoteInfo = Keyboard;
 		};
+		8F0AC2C91973B3A200CEFFF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F0AC2961973B34D00CEFFF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F0AC2C11973B3A200CEFFF6;
+			remoteInfo = "Avaz Keyboard";
+		};
+		8F0AC2CC1973B3A200CEFFF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F0AC2961973B34D00CEFFF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F0AC2C11973B3A200CEFFF6;
+			remoteInfo = "Avaz Keyboard";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8F0AC2D11973B3A200CEFFF6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8F0AC2CB1973B3A200CEFFF6 /* com.avazapp.Keyboard.Avaz-Keyboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8F0AC29E1973B34E00CEFFF6 /* Keyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,6 +69,20 @@
 		8F0AC2AE1973B34F00CEFFF6 /* KeyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F0AC2B31973B34F00CEFFF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F0AC2B41973B34F00CEFFF6 /* KeyboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardTests.m; sourceTree = "<group>"; };
+		8F0AC2C21973B3A200CEFFF6 /* com.avazapp.Keyboard.Avaz-Keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "com.avazapp.Keyboard.Avaz-Keyboard.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F0AC2C51973B3A200CEFFF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F0AC2C61973B3A200CEFFF6 /* KeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardViewController.h; sourceTree = "<group>"; };
+		8F0AC2C71973B3A200CEFFF6 /* KeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
+		8F0AC2D21973BDD300CEFFF6 /* Keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keys.h; sourceTree = "<group>"; };
+		8F0AC2D31973BDD300CEFFF6 /* Keys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Keys.m; sourceTree = "<group>"; };
+		8F0AC2D51973BE2200CEFFF6 /* Keys.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Keys.xib; sourceTree = "<group>"; };
+		8F52C1F919792EA100BB95A0 /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataController.h; sourceTree = "<group>"; };
+		8F52C1FA19792EA100BB95A0 /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
+		8F52C1FF197A834800BB95A0 /* PredictController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredictController.h; sourceTree = "<group>"; };
+		8F52C200197A834800BB95A0 /* PredictController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredictController.m; sourceTree = "<group>"; };
+		8F9A9ABE19755B2300A5DCC8 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		8F9A9ABF19755B2300A5DCC8 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		8F9A9AC019755B2300A5DCC8 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +100,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8F0AC2BF1973B3A200CEFFF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -58,6 +115,7 @@
 			children = (
 				8F0AC2A01973B34E00CEFFF6 /* Keyboard */,
 				8F0AC2B11973B34F00CEFFF6 /* KeyboardTests */,
+				8F0AC2C31973B3A200CEFFF6 /* Avaz Keyboard */,
 				8F0AC29F1973B34E00CEFFF6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +125,7 @@
 			children = (
 				8F0AC29E1973B34E00CEFFF6 /* Keyboard.app */,
 				8F0AC2AE1973B34F00CEFFF6 /* KeyboardTests.xctest */,
+				8F0AC2C21973B3A200CEFFF6 /* com.avazapp.Keyboard.Avaz-Keyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,6 +137,9 @@
 				8F0AC2A61973B34E00CEFFF6 /* AppDelegate.m */,
 				8F0AC2A81973B34E00CEFFF6 /* Images.xcassets */,
 				8F0AC2A11973B34E00CEFFF6 /* Supporting Files */,
+				8F9A9ABE19755B2300A5DCC8 /* SettingsViewController.h */,
+				8F9A9ABF19755B2300A5DCC8 /* SettingsViewController.m */,
+				8F9A9AC019755B2300A5DCC8 /* SettingsViewController.xib */,
 			);
 			path = Keyboard;
 			sourceTree = "<group>";
@@ -108,6 +170,31 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8F0AC2C31973B3A200CEFFF6 /* Avaz Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				8F0AC2C61973B3A200CEFFF6 /* KeyboardViewController.h */,
+				8F0AC2C71973B3A200CEFFF6 /* KeyboardViewController.m */,
+				8F0AC2C41973B3A200CEFFF6 /* Supporting Files */,
+				8F0AC2D21973BDD300CEFFF6 /* Keys.h */,
+				8F0AC2D31973BDD300CEFFF6 /* Keys.m */,
+				8F0AC2D51973BE2200CEFFF6 /* Keys.xib */,
+				8F52C1F919792EA100BB95A0 /* DataController.h */,
+				8F52C1FA19792EA100BB95A0 /* DataController.m */,
+				8F52C1FF197A834800BB95A0 /* PredictController.h */,
+				8F52C200197A834800BB95A0 /* PredictController.m */,
+			);
+			path = "Avaz Keyboard";
+			sourceTree = "<group>";
+		};
+		8F0AC2C41973B3A200CEFFF6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8F0AC2C51973B3A200CEFFF6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,10 +205,13 @@
 				8F0AC29A1973B34E00CEFFF6 /* Sources */,
 				8F0AC29B1973B34E00CEFFF6 /* Frameworks */,
 				8F0AC29C1973B34E00CEFFF6 /* Resources */,
+				8F0AC2D11973B3A200CEFFF6 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8F0AC2CA1973B3A200CEFFF6 /* PBXTargetDependency */,
+				8F0AC2CD1973B3A200CEFFF6 /* PBXTargetDependency */,
 			);
 			name = Keyboard;
 			productName = Keyboard;
@@ -146,6 +236,23 @@
 			productReference = 8F0AC2AE1973B34F00CEFFF6 /* KeyboardTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8F0AC2C11973B3A200CEFFF6 /* Avaz Keyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F0AC2CE1973B3A200CEFFF6 /* Build configuration list for PBXNativeTarget "Avaz Keyboard" */;
+			buildPhases = (
+				8F0AC2BE1973B3A200CEFFF6 /* Sources */,
+				8F0AC2BF1973B3A200CEFFF6 /* Frameworks */,
+				8F0AC2C01973B3A200CEFFF6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Avaz Keyboard";
+			productName = "Avaz Keyboard";
+			productReference = 8F0AC2C21973B3A200CEFFF6 /* com.avazapp.Keyboard.Avaz-Keyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -161,6 +268,9 @@
 					8F0AC2AD1973B34F00CEFFF6 = {
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = 8F0AC29D1973B34E00CEFFF6;
+					};
+					8F0AC2C11973B3A200CEFFF6 = {
+						CreatedOnToolsVersion = 6.0;
 					};
 				};
 			};
@@ -178,6 +288,7 @@
 			targets = (
 				8F0AC29D1973B34E00CEFFF6 /* Keyboard */,
 				8F0AC2AD1973B34F00CEFFF6 /* KeyboardTests */,
+				8F0AC2C11973B3A200CEFFF6 /* Avaz Keyboard */,
 			);
 		};
 /* End PBXProject section */
@@ -188,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F0AC2A91973B34E00CEFFF6 /* Images.xcassets in Resources */,
+				8F9A9AC219755B2300A5DCC8 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +310,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8F0AC2C01973B3A200CEFFF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F0AC2D61973BE2200CEFFF6 /* Keys.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -205,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F9A9AC119755B2300A5DCC8 /* SettingsViewController.m in Sources */,
 				8F0AC2A71973B34E00CEFFF6 /* AppDelegate.m in Sources */,
 				8F0AC2A41973B34E00CEFFF6 /* main.m in Sources */,
 			);
@@ -218,6 +339,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8F0AC2BE1973B3A200CEFFF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F0AC2C81973B3A200CEFFF6 /* KeyboardViewController.m in Sources */,
+				8F52C201197A834800BB95A0 /* PredictController.m in Sources */,
+				8F0AC2D41973BDD300CEFFF6 /* Keys.m in Sources */,
+				8F52C1FB19792EA100BB95A0 /* DataController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -225,6 +357,16 @@
 			isa = PBXTargetDependency;
 			target = 8F0AC29D1973B34E00CEFFF6 /* Keyboard */;
 			targetProxy = 8F0AC2AF1973B34F00CEFFF6 /* PBXContainerItemProxy */;
+		};
+		8F0AC2CA1973B3A200CEFFF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F0AC2C11973B3A200CEFFF6 /* Avaz Keyboard */;
+			targetProxy = 8F0AC2C91973B3A200CEFFF6 /* PBXContainerItemProxy */;
+		};
+		8F0AC2CD1973B3A200CEFFF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F0AC2C11973B3A200CEFFF6 /* Avaz Keyboard */;
+			targetProxy = 8F0AC2CC1973B3A200CEFFF6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -365,6 +507,32 @@
 			};
 			name = Release;
 		};
+		8F0AC2CF1973B3A200CEFFF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Avaz Keyboard/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "com.avazapp.Keyboard.$(TARGET_NAME:rfc1034identifier)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8F0AC2D01973B3A200CEFFF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Avaz Keyboard/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "com.avazapp.Keyboard.$(TARGET_NAME:rfc1034identifier)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -384,6 +552,7 @@
 				8F0AC2BA1973B34F00CEFFF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F0AC2BB1973B34F00CEFFF6 /* Build configuration list for PBXNativeTarget "KeyboardTests" */ = {
 			isa = XCConfigurationList;
@@ -392,6 +561,16 @@
 				8F0AC2BD1973B34F00CEFFF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F0AC2CE1973B3A200CEFFF6 /* Build configuration list for PBXNativeTarget "Avaz Keyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F0AC2CF1973B3A200CEFFF6 /* Debug */,
+				8F0AC2D01973B3A200CEFFF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
