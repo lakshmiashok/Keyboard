@@ -10,5 +10,6 @@
 
 @interface KeyboardViewController : UIInputViewController
 @property NSMutableArray *prediction;
+@property NSMutableArray *prediction_button_list;
 
 @end

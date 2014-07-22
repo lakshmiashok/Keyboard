@@ -11,12 +11,14 @@
 #import <QuartzCore/QuartzCore.h>
 #import <Foundation/Foundation.h>
 #import "DataController.h"
+//#import "PredictionModeController.h"
 
 
 @interface KeyboardViewController ()
 //@property (nonatomic, strong) UIButton *nextKeyboardButton;
 @property (nonatomic, strong)Keys *keys;
 @property (nonatomic,strong)DataController *data;
+//@property (nonatomic,strong)PredictionModeController *predict;
 @end
 
 @implementation KeyboardViewController
@@ -61,7 +63,8 @@
     self.keys = [[[NSBundle mainBundle]loadNibNamed:@"Keys" owner:nil options:nil]objectAtIndex:0];
     self.data = [[DataController alloc] init];
     
-    self.prediction = [[NSMutableArray alloc]initWithObjects:@"Apple",@"Ball",@"Car",@"Dog", nil];
+    self.prediction = [[NSMutableArray alloc]initWithObjects:@"Apple",@"Ball",@"Car",@"Dog",@"Egg", nil];
+    self.prediction_button_list = [[NSMutableArray alloc]init];
     /*for(UIButton *key in self.keys.numericKeyboard)
     {
         CALayer *layer = [key layer];
@@ -273,11 +276,13 @@
 {
     //define constants
     double DISTANCE_BETWEEN_BUTTONS_HORIZONTALLY=10.0;
-    double DISTANCE_BETWEEN_BUTTONS_VERTICALLY=9.0;
+    double DISTANCE_BETWEEN_BUTTONS_VERTICALLY=1.0;
     double PADDING_WITNIN_BUTTONS=8.0;
     double IMAGE_HEIGHT_CONSTRAINT=45.0;
     double BUTTON_HEIGHT = 57.0;
     double MAX_LABEL_WIDTH = 500.0;
+    double expected_width;
+    double cumulative_button_width = 0;
     
     //create scrollview
     CGRect scrollRect = CGRectMake(0, 10, 1200, 65);
@@ -287,22 +292,75 @@
     int numberOfImages = 5;
     CGFloat currentX = 5.0f;
     
-    for (int i=1; i <= numberOfImages; i++) {
+    for (int i=0; i <numberOfImages; i++) {
+    
+        UIButton *btn = [[UIButton alloc]init];
         
-    //Create image
-    NSString *imageName = [NSString stringWithFormat:@"pic%d.jpeg",i];
-    UIImage *image = [UIImage imageNamed:imageName];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        //Create image
+        NSString *imageName = [NSString stringWithFormat:@"pic%d.jpeg",i];
+        UIImage *img = [UIImage imageNamed:imageName];
+        CGSize image_size = [img size];
+        expected_width = image_size.width * IMAGE_HEIGHT_CONSTRAINT / image_size.height ;
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(PADDING_WITNIN_BUTTONS, PADDING_WITNIN_BUTTONS, expected_width, IMAGE_HEIGHT_CONSTRAINT)];
+        [imageView setImage:img];
+        
+        [btn addSubview:imageView];
+        
+        //Create the corresponding label
+        UILabel *label = [[UILabel alloc] init];
+        [label setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]+6]];
+        [label setBackgroundColor:[UIColor clearColor]];
+        [label setTextAlignment:NSTextAlignmentCenter];
+        [label setText:[self.prediction objectAtIndex:i]];
+        
+        double label_width;
+        if(expected_width == 0) {
+            label_width = MIN(MAX_LABEL_WIDTH,MAX([[self.prediction objectAtIndex:i] sizeWithFont:[label font]].width , 75.0)); //in case of no image
+        } else {
+            label_width = [[self.prediction objectAtIndex:i] sizeWithFont:[label font]].width;
+        }
+        
+        double label_height = [[self.prediction objectAtIndex:i] sizeWithFont:[label font]].height;
+        double x_offset;
+        double y_offset;
+        
+        if(expected_width == 0) {
+            x_offset = 2*PADDING_WITNIN_BUTTONS;
+        } else {
+            x_offset = 2* PADDING_WITNIN_BUTTONS + expected_width;
+        }
+        y_offset = (BUTTON_HEIGHT - label_height) /2;
+        
+        [label setFrame:CGRectMake(x_offset, y_offset, label_width , label_height)];
+        [label setFrame:CGRectIntegral(label.frame)];
+        [label setCenter:label.center];
+        
+        [btn addSubview:label];
+
+        btn.frame = CGRectMake(cumulative_button_width + DISTANCE_BETWEEN_BUTTONS_HORIZONTALLY, DISTANCE_BETWEEN_BUTTONS_VERTICALLY,x_offset +label_width +2*PADDING_WITNIN_BUTTONS , BUTTON_HEIGHT);
+        [btn setFrame:CGRectIntegral(btn.frame)];
+        [btn setCenter:btn.center];
+        
+        UIImage* background_image_normal = [[UIImage imageNamed:@"easy-normal.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(12, 12,12,12)];
+        UIImage* background_image_highlighted = [[UIImage imageNamed:@"easy-selected.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(12, 12,12,12)];
+        
+        cumulative_button_width += DISTANCE_BETWEEN_BUTTONS_HORIZONTALLY + x_offset + label_width + 2*PADDING_WITNIN_BUTTONS;
+        [btn setBackgroundImage:background_image_normal forState:UIControlStateNormal];
+        [btn setBackgroundImage:background_image_highlighted forState:UIControlStateHighlighted];
+        
+        [btn setBackgroundColor:[UIColor grayColor]];
+        CALayer *layer = [btn layer];
+        [layer setCornerRadius:5.0f];
+        
+        //HIGHLIGHTING ON CLICK - UN-COMMENT LATER :
+        
+        /*btn addTarget:self action:@selector(predictionClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [btn setTitleColor:[UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1.0] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1.0] forState:UIControlStateHighlighted];*/
+        
+        [self.prediction_button_list addObject:btn];
+        [scrollView addSubview:btn]; //CHANGE TO SCROLL VIEW
     
-    //Position the image
-    
-    //CGRect rect = imageView.frame;
-    CGRect rect = CGRectMake(0, 0, 60, 60);
-    rect.origin.x = currentX;
-    imageView.frame = rect;
-        //START FROM HERE - CREATE BUTTONS AND ADD THE IMAGES TO THE BUTTONS
-    [scrollView addSubview:imageView];
-        currentX += 70;
     }
     
     scrollView.contentSize = CGSizeMake(currentX, 70);
