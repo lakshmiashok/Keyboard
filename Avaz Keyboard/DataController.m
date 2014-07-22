@@ -48,39 +48,71 @@
     int spacePos = -1;
     int temp = 0;
     int flag = -1;
+    int spacecheck =0;
+    int len = self.pointer -1;
     NSString *blank = [[NSString alloc]initWithFormat:@" "];
     temp = self.pointer-1;
     
     NSString *character = [self.storeData objectAtIndex:temp];
-    if([character isEqualToString:blank]||[character isEqualToString:@"."]||[character isEqualToString:@","])
-        [self.word appendFormat:@"%@",character];
-    else
+    
+    //Check if the sentence contains any non-alphanumeric characters at all
+    for(i=0; i<=self.pointer-1 ; i++)
     {
-    while (temp>=0)
-    {
-        
-        NSString *character = [self.storeData objectAtIndex:temp];
+        NSString *character = [self.storeData objectAtIndex:i];
         if([character isEqualToString:blank]||[character isEqualToString:@"."]||[character isEqualToString:@","])
         {
-            spacePos = temp;
-            temp = -1;
-            flag = 0;
+            spacecheck++;
         }
-        else
-        {
-            temp --;
-        }
+
     }
-    
-    if(flag==0)
+    //If it contains only a single word, create the word
+    if(spacecheck == 0)
     {
-        for(i=spacePos+1;i<=self.pointer-1;i++)
+        NSLog(@"Case 1");
+        for(i=0;i<=self.pointer-1;i++)
         {
             NSString *character = [self.storeData objectAtIndex:i];
             [self.word appendFormat:@"%@",character];
         }
-        NSLog(@"Last word is %@",self.word);
+
     }
+    //If last character is non-alphanumeric :
+    else if([character isEqualToString:blank]||[character isEqualToString:@"."]||[character isEqualToString:@","])
+    {
+        NSLog(@"Case 2");
+        [self.word appendFormat:@"%@",character];
+    }
+    //If last character is the last character of a word i.e. sentence ends with a word
+    else
+    {
+        NSLog(@"Case 3");
+        //Obtain the starting position of the last word
+        while (temp>=0)
+        {
+        
+            NSString *character = [self.storeData objectAtIndex:temp];
+            if([character isEqualToString:blank]||[character isEqualToString:@"."]||[character isEqualToString:@","])
+            {
+                spacePos = temp;
+                temp = -1;
+                flag = 0;
+            }
+            else
+            {
+                temp --;
+            }
+        }
+        //If the position was found, retireve the word
+        if(flag==0)
+        {
+            NSLog(@"Space found at : %d",spacePos);
+            for(i=spacePos+1;i<=self.pointer-1;i++)
+            {
+                NSString *character = [self.storeData objectAtIndex:i];
+                [self.word appendFormat:@"%@",character];
+            }
+            NSLog(@"Last word is %@",self.word);
+        }
     }
     return self.word;
 }
@@ -107,9 +139,11 @@
             [eachWord appendFormat:@"%@",character];
         }
     }
+    NSLog(@"Sentence: %@",self.sentence);
     NSString *lastChar = [self.storeData objectAtIndex:self.pointer-1];
     if(!([lastChar isEqualToString:blank]||[lastChar isEqualToString:@"."]||[lastChar isEqualToString:@","]))
     {
+        NSLog(@"Retrieved last word");
         [self.sentence addObject:[self retrieveWord]];
     }
         
