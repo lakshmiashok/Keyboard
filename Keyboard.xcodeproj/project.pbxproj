@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31918F0B197EADAB00A233C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AC2A61973B34E00CEFFF6 /* AppDelegate.m */; };
+		31918F0D197EADDF00A233C7 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9A9ABF19755B2300A5DCC8 /* SettingsViewController.m */; };
+		31AF40DC197EAB39002E6E2C /* Data.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 31AF40D7197EAB39002E6E2C /* Data.xcdatamodel */; };
+		31AF40DD197EAB39002E6E2C /* AvazPrediction-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31AF40D8197EAB39002E6E2C /* AvazPrediction-Info.plist */; };
+		31AF40DE197EAB39002E6E2C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 31AF40D9197EAB39002E6E2C /* InfoPlist.strings */; };
+		31AF40DF197EAB39002E6E2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AF40DA197EAB39002E6E2C /* main.m */; };
 		8F0AC2A41973B34E00CEFFF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AC2A31973B34E00CEFFF6 /* main.m */; };
 		8F0AC2A71973B34E00CEFFF6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AC2A61973B34E00CEFFF6 /* AppDelegate.m */; };
 		8F0AC2A91973B34E00CEFFF6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F0AC2A81973B34E00CEFFF6 /* Images.xcassets */; };
@@ -105,6 +111,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		31AF40D7197EAB39002E6E2C /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
+		31AF40D8197EAB39002E6E2C /* AvazPrediction-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AvazPrediction-Info.plist"; sourceTree = "<group>"; };
+		31AF40D9197EAB39002E6E2C /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		31AF40DA197EAB39002E6E2C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		31AF40DB197EAB39002E6E2C /* AvazConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvazConstants.h; sourceTree = "<group>"; };
 		8F0AC29E1973B34E00CEFFF6 /* Keyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F0AC2A21973B34E00CEFFF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F0AC2A31973B34E00CEFFF6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -323,6 +334,11 @@
 		8F0AC2C41973B3A200CEFFF6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				31AF40D7197EAB39002E6E2C /* Data.xcdatamodel */,
+				31AF40D8197EAB39002E6E2C /* AvazPrediction-Info.plist */,
+				31AF40D9197EAB39002E6E2C /* InfoPlist.strings */,
+				31AF40DA197EAB39002E6E2C /* main.m */,
+				31AF40DB197EAB39002E6E2C /* AvazConstants.h */,
 				8F48B9B8197E909A0033AFB7 /* Keyboard-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -545,6 +561,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F52C207197D1BC700BB95A0 /* pic2.jpeg in Resources */,
+				31AF40DE197EAB39002E6E2C /* InfoPlist.strings in Resources */,
+				31AF40DD197EAB39002E6E2C /* AvazPrediction-Info.plist in Resources */,
 				8F52C203197D041D00BB95A0 /* pic0.jpeg in Resources */,
 				8F52C20B197D287C00BB95A0 /* pic3.jpeg in Resources */,
 				8F52C218197E72DF00BB95A0 /* picFile.csv in Resources */,
@@ -582,12 +600,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31918F0D197EADDF00A233C7 /* SettingsViewController.m in Sources */,
 				8F48BA10197E94E10033AFB7 /* HistoryData+UtilityMethods.m in Sources */,
 				8F48BA01197E94E10033AFB7 /* MetaphoneHelper.mm in Sources */,
 				8F48BA19197E94E10033AFB7 /* WordData.m in Sources */,
+				31918F0B197EADAB00A233C7 /* AppDelegate.m in Sources */,
 				8F48BA1F197E94E10033AFB7 /* HistoryData.m in Sources */,
 				8F48BA0B197E94E10033AFB7 /* BackupData.m in Sources */,
 				8F48BA02197E94E10033AFB7 /* WordDataController.m in Sources */,
+				31AF40DC197EAB39002E6E2C /* Data.xcdatamodel in Sources */,
 				8F48BA0A197E94E10033AFB7 /* AudioController.m in Sources */,
 				8F48BA0E197E94E10033AFB7 /* SettingsData.m in Sources */,
 				8F48BA20197E94E10033AFB7 /* SettingsData+UtilityMethods.m in Sources */,
@@ -596,6 +617,7 @@
 				8F48BA1B197E94E10033AFB7 /* PicModeDict.m in Sources */,
 				8F48BA09197E94E10033AFB7 /* ImageController.m in Sources */,
 				8F48BA12197E94E10033AFB7 /* PicModeDict+UtilityMethods.m in Sources */,
+				31AF40DF197EAB39002E6E2C /* main.m in Sources */,
 				8F48BA15197E94E10033AFB7 /* QuickAccessData+UtilityMethods.m in Sources */,
 				8F48BA16197E94E10033AFB7 /* WordData+UtilityMethods.m in Sources */,
 				8F48BA21197E94E10033AFB7 /* Context.m in Sources */,
@@ -784,6 +806,7 @@
 		8F0AC2CF1973B3A200CEFFF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PREFIX_HEADER = "Avaz Keyboard/Keyboard-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -799,6 +822,7 @@
 		8F0AC2D01973B3A200CEFFF6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PREFIX_HEADER = "Avaz Keyboard/Keyboard-Prefix.pch";
 				INFOPLIST_FILE = "Avaz Keyboard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="Version4" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AudioData" representedClassName="AudioData" syncable="YES">
+        <attribute name="audio_file_path" attributeType="String" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="BackupData" representedClassName="BackupData" syncable="YES">
+        <attribute name="action" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="backupname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="owner" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="HistoryData" representedClassName="HistoryData" syncable="YES">
+        <attribute name="date" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="history" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ImageData" representedClassName="ImageData" syncable="YES">
+        <attribute name="directory_path" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="file_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="key_words" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="MorphExceptionData" representedClassName="MorphExceptionData" syncable="YES">
+        <attribute name="morph_extra" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="morph1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="morph2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="morph3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="morph4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="morph5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="morph6" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="part_of_speech" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="PicModeDict" representedClassName="PicModeDict" syncable="YES">
+        <attribute name="audio_data" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="category_or_template" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="extraColumn1" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="extraColumn2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="is_enabled" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="is_sentence_box_enabled" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="parent_id" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="part_of_speech" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="picture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serial" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tag_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="version" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="PredictionDict" representedClassName="PredictionDict" syncable="YES">
+        <attribute name="frequency" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="parent" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="prediction" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="PronounciationData" representedClassName="PronounciationData" syncable="YES">
+        <attribute name="actual" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="spoken" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="QuickAccessData" representedClassName="QuickAccessData" syncable="YES">
+        <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quick_text" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="SettingsData" representedClassName="SettingsData" syncable="YES">
+        <attribute name="accessHighlightDelay" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="audioSpeakActionKeys" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="audioSpeakOnSelection" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="audioSpeed" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="audioVoice" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="colorCodeInMsgBox" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="genStartingScreen" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="holdTime" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="picModeAddShortcut" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="picModeAutoHome" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="picModeCaptionSize" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="picModeEnlargeImage" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="picModeMsgBox" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="picModeMsgBoxPictures" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="picModeSize" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="picModeStartingParentId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rearrange_on_disable" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="releaseTime" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="scanMode" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="show_scroll" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="showMorphology" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="social_network" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="textModeLayout" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="textModePredictionPictures" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="textModeQuickResponse" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="textModeSize" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="textPredictionDelay" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="touchOrRelease" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="WordData" representedClassName="WordData" syncable="YES">
+        <attribute name="children" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="frequency" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="meta1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="meta2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parent" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="word" attributeType="String" indexed="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AudioData" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="BackupData" positionX="-27" positionY="243" width="128" height="105"/>
+        <element name="HistoryData" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="ImageData" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="MorphExceptionData" positionX="-27" positionY="243" width="128" height="180"/>
+        <element name="PicModeDict" positionX="160" positionY="192" width="128" height="253"/>
+        <element name="PredictionDict" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="PronounciationData" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="QuickAccessData" positionX="-9" positionY="90" width="128" height="75"/>
+        <element name="SettingsData" positionX="160" positionY="192" width="128" height="495"/>
+        <element name="WordData" positionX="-207" positionY="144" width="126" height="135"/>
+    </elements>
+</model>
