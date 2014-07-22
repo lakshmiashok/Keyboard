@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *capsKey;
 @property (weak, nonatomic) IBOutlet UIButton *deleteKey;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *keysArray;
-@property (strong, nonatomic) IBOutletCollection(UIView) NSArray *predictionArray;
+//@property (strong, nonatomic) IBOutletCollection(UIView) NSArray *predictionArray;
 //@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *numericKeyboard;
 @property (weak, nonatomic) IBOutlet UIButton *firstPunc;
 @property (weak, nonatomic) IBOutlet UIButton *secondPunc;

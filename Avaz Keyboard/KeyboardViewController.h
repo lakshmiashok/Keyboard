@@ -9,4 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface KeyboardViewController : UIInputViewController
+@property NSMutableArray *prediction;
+
 @end

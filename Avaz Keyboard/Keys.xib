@@ -258,34 +258,6 @@
                         <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AJe-Ic-emJ">
-                    <rect key="frame" x="70" y="9" width="110" height="60"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AEA-Js-Fbg">
-                    <rect key="frame" x="200" y="9" width="110" height="60"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F4E-pD-BHa">
-                    <rect key="frame" x="330" y="9" width="110" height="60"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZkC-Um-ewS">
-                    <rect key="frame" x="460" y="9" width="110" height="60"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="okA-gv-kiI">
-                    <rect key="frame" x="590" y="9" width="110" height="60"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jcT-bu-nPE">
-                    <rect key="frame" x="720" y="9" width="110" height="60"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5qv-N9-iZ1">
-                    <rect key="frame" x="850" y="9" width="110" height="60"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBp-qg-wTq">
                     <rect key="frame" x="30" y="214" width="60" height="60"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -313,7 +285,7 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENb-62-fwI">
                     <rect key="frame" x="750" y="215" width="60" height="60"/>
                     <color key="backgroundColor" red="0.67170516304347827" green="0.67170516304347827" blue="0.67170516304347827" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="! .">
+                    <state key="normal" title="! ,">
                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -359,12 +331,6 @@
                 <outletCollection property="keysArray" destination="D3g-aD-yed" id="MAg-dF-sxF"/>
                 <outletCollection property="keysArray" destination="H8x-U7-eQX" id="g07-5K-ah2"/>
                 <outletCollection property="keysArray" destination="VcK-ji-gfd" id="EUw-kJ-0HO"/>
-                <outletCollection property="predictionArray" destination="AJe-Ic-emJ" id="TCk-Ri-Sgx"/>
-                <outletCollection property="predictionArray" destination="AEA-Js-Fbg" id="foT-M1-iTe"/>
-                <outletCollection property="predictionArray" destination="F4E-pD-BHa" id="sKI-Yi-CPy"/>
-                <outletCollection property="predictionArray" destination="okA-gv-kiI" id="M1q-uz-QNy"/>
-                <outletCollection property="predictionArray" destination="jcT-bu-nPE" id="P1M-BV-TAq"/>
-                <outletCollection property="predictionArray" destination="5qv-N9-iZ1" id="3gE-nk-8mc"/>
             </connections>
             <point key="canvasLocation" x="71" y="382"/>
         </view>

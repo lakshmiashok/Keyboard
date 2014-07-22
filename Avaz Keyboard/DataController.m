@@ -50,11 +50,17 @@
     int flag = -1;
     NSString *blank = [[NSString alloc]initWithFormat:@" "];
     temp = self.pointer-1;
+    
+    NSString *character = [self.storeData objectAtIndex:temp];
+    if([character isEqualToString:blank]||[character isEqualToString:@"."]||[character isEqualToString:@","])
+        [self.word appendFormat:@"%@",character];
+    else
+    {
     while (temp>=0)
     {
         
         NSString *character = [self.storeData objectAtIndex:temp];
-        if([character isEqualToString:blank])
+        if([character isEqualToString:blank]||[character isEqualToString:@"."]||[character isEqualToString:@","])
         {
             spacePos = temp;
             temp = -1;
@@ -75,6 +81,7 @@
         }
         NSLog(@"Last word is %@",self.word);
     }
+    }
     return self.word;
 }
 -(void)retrieveSentence
@@ -88,11 +95,11 @@
     for(i=0; i<=temp ; i++)
     {
         NSString *character = [self.storeData objectAtIndex:i];
-        if([character isEqualToString:blank])
+        NSLog(@"Character : %@",character);
+        if([character isEqualToString:blank]||[character isEqualToString:@"."]||[character isEqualToString:@","])
         {
             [self.sentence addObject:eachWord];
-            [self.sentence addObject:blank];
-            //[eachWord setString:@" "];
+            [self.sentence addObject:character];
             eachWord = [[NSMutableString alloc]init];
         }
         else
@@ -101,14 +108,14 @@
         }
     }
     NSString *lastChar = [self.storeData objectAtIndex:self.pointer-1];
-    if(![lastChar isEqualToString:blank])
+    if(!([lastChar isEqualToString:blank]||[lastChar isEqualToString:@"."]||[lastChar isEqualToString:@","]))
     {
-        
         [self.sentence addObject:[self retrieveWord]];
     }
         
     NSLog(@"The sentence is : %@",self.sentence);
     
 }
+//-(void)get
 
 @end

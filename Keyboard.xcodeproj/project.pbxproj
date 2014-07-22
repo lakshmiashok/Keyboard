@@ -17,6 +17,11 @@
 		8F0AC2D61973BE2200CEFFF6 /* Keys.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F0AC2D51973BE2200CEFFF6 /* Keys.xib */; };
 		8F52C1FB19792EA100BB95A0 /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F52C1FA19792EA100BB95A0 /* DataController.m */; };
 		8F52C201197A834800BB95A0 /* PredictController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F52C200197A834800BB95A0 /* PredictController.m */; };
+		8F52C203197D041D00BB95A0 /* pic1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8F52C202197D041D00BB95A0 /* pic1.jpeg */; };
+		8F52C205197D195400BB95A0 /* pic2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8F52C204197D195400BB95A0 /* pic2.jpeg */; };
+		8F52C207197D1BC700BB95A0 /* pic3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8F52C206197D1BC700BB95A0 /* pic3.jpeg */; };
+		8F52C209197D1C1600BB95A0 /* pic4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8F52C208197D1C1600BB95A0 /* pic4.jpeg */; };
+		8F52C20B197D287C00BB95A0 /* pic5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8F52C20A197D287C00BB95A0 /* pic5.jpeg */; };
 		8F9A9AC119755B2300A5DCC8 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9A9ABF19755B2300A5DCC8 /* SettingsViewController.m */; };
 		8F9A9AC219755B2300A5DCC8 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F9A9AC019755B2300A5DCC8 /* SettingsViewController.xib */; };
 /* End PBXBuildFile section */
@@ -80,6 +85,11 @@
 		8F52C1FA19792EA100BB95A0 /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
 		8F52C1FF197A834800BB95A0 /* PredictController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredictController.h; sourceTree = "<group>"; };
 		8F52C200197A834800BB95A0 /* PredictController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredictController.m; sourceTree = "<group>"; };
+		8F52C202197D041D00BB95A0 /* pic1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pic1.jpeg; path = "../../Invention Labs/pic1.jpeg"; sourceTree = "<group>"; };
+		8F52C204197D195400BB95A0 /* pic2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pic2.jpeg; path = "../../Invention Labs/pic2.jpeg"; sourceTree = "<group>"; };
+		8F52C206197D1BC700BB95A0 /* pic3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pic3.jpeg; path = "../../Invention Labs/pic3.jpeg"; sourceTree = "<group>"; };
+		8F52C208197D1C1600BB95A0 /* pic4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pic4.jpeg; path = "../../Invention Labs/pic4.jpeg"; sourceTree = "<group>"; };
+		8F52C20A197D287C00BB95A0 /* pic5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pic5.jpeg; path = "../../Invention Labs/pic5.jpeg"; sourceTree = "<group>"; };
 		8F9A9ABE19755B2300A5DCC8 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		8F9A9ABF19755B2300A5DCC8 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		8F9A9AC019755B2300A5DCC8 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
@@ -173,6 +183,11 @@
 		8F0AC2C31973B3A200CEFFF6 /* Avaz Keyboard */ = {
 			isa = PBXGroup;
 			children = (
+				8F52C20A197D287C00BB95A0 /* pic5.jpeg */,
+				8F52C208197D1C1600BB95A0 /* pic4.jpeg */,
+				8F52C206197D1BC700BB95A0 /* pic3.jpeg */,
+				8F52C204197D195400BB95A0 /* pic2.jpeg */,
+				8F52C202197D041D00BB95A0 /* pic1.jpeg */,
 				8F0AC2C61973B3A200CEFFF6 /* KeyboardViewController.h */,
 				8F0AC2C71973B3A200CEFFF6 /* KeyboardViewController.m */,
 				8F0AC2C41973B3A200CEFFF6 /* Supporting Files */,
@@ -314,7 +329,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F52C207197D1BC700BB95A0 /* pic3.jpeg in Resources */,
+				8F52C203197D041D00BB95A0 /* pic1.jpeg in Resources */,
+				8F52C20B197D287C00BB95A0 /* pic5.jpeg in Resources */,
 				8F0AC2D61973BE2200CEFFF6 /* Keys.xib in Resources */,
+				8F52C209197D1C1600BB95A0 /* pic4.jpeg in Resources */,
+				8F52C205197D195400BB95A0 /* pic2.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -55,11 +55,13 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:@"Lower" forKey:@"KeyCase"];
-    //[defaults setObject:@"Unset" forKey:@"Shift"];
+    [defaults setObject:@"Unset" forKey:@"Shift"];
     [defaults synchronize];
     
     self.keys = [[[NSBundle mainBundle]loadNibNamed:@"Keys" owner:nil options:nil]objectAtIndex:0];
     self.data = [[DataController alloc] init];
+    
+    self.prediction = [[NSMutableArray alloc]initWithObjects:@"Apple",@"Ball",@"Car",@"Dog", nil];
     /*for(UIButton *key in self.keys.numericKeyboard)
     {
         CALayer *layer = [key layer];
@@ -70,11 +72,11 @@
         CALayer *layer = [key layer];
         [layer setCornerRadius:5.0f];
     }
-    for(UIView *views in self.keys.predictionArray)
+    /*for(UIView *views in self.keys.predictionArray)
     {
         CALayer *layer = [views layer];
         [layer setCornerRadius:5.0f];
-    }
+    }*/
     
     self.keys.getWord.layer.cornerRadius = 5.0f;
     self.keys.getSentence.layer.cornerRadius = 5.0f;
@@ -84,8 +86,8 @@
     self.keys.returnKey.layer.cornerRadius = 5.0f;
     self.keys.globeKey.layer.cornerRadius = 5.0f;
     self.keys.capsKey.layer.cornerRadius = 5.0f;
-  //  self.keys.firstPunc.layer.cornerRadius = 5.0f;
-  //  self.keys.secondPunc.layer.cornerRadius = 5.0f;
+    self.keys.firstPunc.layer.cornerRadius = 5.0f;
+    self.keys.secondPunc.layer.cornerRadius = 5.0f;
     
     NSString *colorDefaults = [defaults stringForKey: @"BackgroundColour"];
     if([colorDefaults isEqualToString:@"White"])
@@ -94,7 +96,6 @@
         self.keys.backgroundColor = [UIColor blackColor];
     
     [self addGesturesToKeyboard];
-     NSLog(@"In view did load\n");
     
     self.inputView = self.keys;
     
@@ -149,6 +150,7 @@
     [self.keys.capsKey addTarget:self action:@selector(pressCapsKey) forControlEvents:UIControlEventTouchUpInside];
     
     //Change to next keyboard
+
     [self.keys.globeKey addTarget:self action:@selector(advanceToNextInputMode) forControlEvents:UIControlEventTouchUpInside];
     
     for(UIButton *key in self.keys.keysArray)
@@ -158,9 +160,9 @@
     
     [self.keys.getSentence addTarget:self action:@selector(callRetrieveSentence) forControlEvents:UIControlEventTouchUpInside];
     
-    //[self.keys.firstPunc addTarget:self action:@selector(pressFirstPunc) forControlEvents:UIControlEventTouchUpInside];
+    [self.keys.firstPunc addTarget:self action:@selector(pressFirstPunc) forControlEvents:UIControlEventTouchUpInside];
     
-    //[self.keys.secondPunc addTarget:self action:@selector(pressSecondPunc) forControlEvents:UIControlEventTouchUpInside];
+    [self.keys.secondPunc addTarget:self action:@selector(pressSecondPunc) forControlEvents:UIControlEventTouchUpInside];
     
 }
 
@@ -171,27 +173,44 @@
     [self.view addSubview:myView];
 }
 
-/*-(void) pressFirstPunc
+-(void) pressFirstPunc
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *caseDefaults = [defaults stringForKey: @"Shift"];
     if([caseDefaults isEqualToString:@"Set"])
     {
+        NSLog(@"In puctuation - set");
         [self.textDocumentProxy insertText:@"!"];
         [self.data keyPressed:@"!"];
         [defaults setObject:@"Unset" forKey:@"Shift"];
     }
     else
     {
-        [self.textDocumentProxy insertText:@"."];
-        [self.data keyPressed:@"."];
+        NSLog(@"In puctuation - has to be set");
+        [self.textDocumentProxy insertText:@","];
+        [self.data keyPressed:@","];
     }
 }
 
 -(void) pressSecondPunc
 {
-    [self.textDocumentProxy insertText:@","];
-}*/
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *caseDefaults = [defaults stringForKey: @"Shift"];
+    if([caseDefaults isEqualToString:@"Set"])
+    {
+        NSLog(@"In puctuation - set");
+        [self.textDocumentProxy insertText:@"?"];
+        [self.data keyPressed:@"?"];
+        [defaults setObject:@"Unset" forKey:@"Shift"];
+    }
+    else
+    {
+        NSLog(@"In puctuation - has to be set");
+        [self.textDocumentProxy insertText:@"."];
+        [self.data keyPressed:@"."];
+    }
+
+}
 
 -(void)callRetrieveWord
 {
@@ -233,6 +252,9 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *caseDefaults = [defaults stringForKey: @"KeyCase"];
     
+    NSString *title = [[NSString alloc]initWithFormat:@"%@",[key currentTitle]];
+    if([title isEqualToString:@"a"]||[title isEqualToString:@"A"])
+        [self aimages];
 
     if([caseDefaults isEqualToString:@"Upper"])
     {
@@ -246,6 +268,51 @@
          [self.textDocumentProxy insertText:[[key currentTitle]lowercaseString]];
          [self.data keyPressed:[[key currentTitle]lowercaseString]];
     }
+}
+-(void) aimages
+{
+    //define constants
+    double DISTANCE_BETWEEN_BUTTONS_HORIZONTALLY=10.0;
+    double DISTANCE_BETWEEN_BUTTONS_VERTICALLY=9.0;
+    double PADDING_WITNIN_BUTTONS=8.0;
+    double IMAGE_HEIGHT_CONSTRAINT=45.0;
+    double BUTTON_HEIGHT = 57.0;
+    double MAX_LABEL_WIDTH = 500.0;
+    
+    //create scrollview
+    CGRect scrollRect = CGRectMake(0, 10, 1200, 65);
+    //UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:scrollRect];
+    
+    int numberOfImages = 5;
+    CGFloat currentX = 5.0f;
+    
+    for (int i=1; i <= numberOfImages; i++) {
+        
+    //Create image
+    NSString *imageName = [NSString stringWithFormat:@"pic%d.jpeg",i];
+    UIImage *image = [UIImage imageNamed:imageName];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    
+    //Position the image
+    
+    //CGRect rect = imageView.frame;
+    CGRect rect = CGRectMake(0, 0, 60, 60);
+    rect.origin.x = currentX;
+    imageView.frame = rect;
+        //START FROM HERE - CREATE BUTTONS AND ADD THE IMAGES TO THE BUTTONS
+    [scrollView addSubview:imageView];
+        currentX += 70;
+    }
+    
+    scrollView.contentSize = CGSizeMake(currentX, 70);
+    NSLog(@"WIDTH : %f",scrollView.contentSize.width);
+    scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+    scrollView.pagingEnabled = YES;
+    [self.view addSubview:scrollView];
+    
+    [super viewDidLoad];
+    
 }
 
 @end
